@@ -2,7 +2,7 @@
 
 const authService = require('../services/auth-service')
 const constant = require('../utils/constants')
-const { conf } = require('../utils/conf')
+const { conf } = require('../config')
 const usuariosService = require('../services/usuarios-service')
 
 exports.post = async (req, res) => {

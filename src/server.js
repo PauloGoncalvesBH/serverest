@@ -9,7 +9,7 @@ const open = require('open')
 
 const { version } = require('../package.json')
 const { formaDeExecucao, urlDocumentacao } = require('./utils/ambiente')
-const { conf } = require('./utils/conf')
+const { conf } = require('./config')
 const DEFAULT_PORT = 3000
 
 const argv = require('yargs')

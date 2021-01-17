@@ -10,7 +10,7 @@ const timeout = require('connect-timeout')
 const { join } = require('path')
 
 const { formaDeExecucao, urlDocumentacao } = require('./utils/ambiente')
-const { conf } = require('./utils/conf')
+const { conf } = require('./config')
 const errorHandler = require('./middlewares/error-handler')
 const monitor = require('./monitor')
 const { version } = require('../package.json')
