@@ -1,6 +1,8 @@
 name: Continuous Integration
 
 on:
+  push:
+    branches-ignore: [trunk, beta]
   pull_request:
   workflow_dispatch:
 
@@ -72,3 +74,17 @@ jobs:
         npm run test:mutation:diff
       env:
         STRYKER_DASHBOARD_API_KEY: ${{ secrets.STRYKER_DASHBOARD_API_KEY }}
+
+  sonarcloud:
+    name: SonarCloud
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Project checkout
+      uses: actions/checkout@v2
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
